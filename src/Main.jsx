@@ -1,50 +1,19 @@
 import { useState } from "react";
-import { clipBoardAPI } from "./api";
 import { ImageSection } from "./ImageSection";
 import { Message } from "./Message";
 import UploadFile from "./UploadFile";
-import UpscaleOptions from "./UpscaleOptions";
 import { Hourglass } from "react-loader-spinner";
+import ImageEditor from "./ImageEditor";
 
-export function Main({
-  image,
-  newImage,
-  setImage,
-  setNewImage,
-  targetUpscale,
-  strategy,
-  handleTargetUpscale,
-  handleStrategy,
-}) {
+export function Main({ image, newImage, setImage, setNewImage }) {
   const [isloading, setIsLoading] = useState(false);
-  const handleSubmit = function () {
-    setIsLoading((v) => !v);
-    const originalImage = image;
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      const image = new Image();
-      image.onload = async function () {
-        const { width, height } = {
-          width: image.width,
-          height: image.height,
-        };
-        const newImageURL = await clipBoardAPI(originalImage, width, height);
-        setNewImage(newImageURL);
-        setIsLoading((v) => !v);
-      };
-
-      image.src = e.target.result;
-    };
-
-    reader.readAsDataURL(originalImage);
-  };
 
   async function onFileChange(file) {
     setImage(file);
   }
 
   return (
-    <main>
+    <main className="relative">
       {newImage ? (
         <ImageSection image={image} newImage={newImage} />
       ) : isloading ? (
@@ -65,20 +34,12 @@ export function Main({
               <UploadFile onFileChange={onFileChange} />
             </>
           ) : (
-            <img
-              src={URL.createObjectURL(image)}
-              alt="originalImage"
-              className="original-image"
+            <ImageEditor
+              image={image}
+              setNewImage={setNewImage}
+              setIsLoading={setIsLoading}
             />
           )}
-          <UpscaleOptions
-            image={image}
-            strategy={strategy}
-            targetUpscale={targetUpscale}
-            handleStrategy={handleStrategy}
-            handleTargetUpscale={handleTargetUpscale}
-            handleSubmit={handleSubmit}
-          />
         </>
       )}
     </main>

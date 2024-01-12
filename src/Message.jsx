@@ -3,10 +3,10 @@ export function Message() {
     <section className="message show">
       <img src="midyAI.png" alt="midyAI logo" />
       <h1 className="text-4xl sm:text-[52px] font-bold font-secondary text-gray-800 dark:text-gray-100 uppercase relative">
-        MIDYAI IMAGE UPSCALER
+        MIDYAI CLEANUP
       </h1>
       <h2 className="text-xl font-semibold text-gray-600 dark:text-gray-400">
-        Upscale, denoise and enhance your images in seconds
+        Remove object, defect, people, or text from your pictures in seconds
       </h2>
     </section>
   );

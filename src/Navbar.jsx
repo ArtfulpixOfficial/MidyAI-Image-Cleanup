@@ -3,9 +3,7 @@ import { Button } from "./Button";
 export function Navbar({ image, newImage, reset }) {
   const handleDownload = async function () {
     if (!newImage) return;
-    const imageUrl = `/proxy-image/${newImage.slice(31)}`;
-
-    const response = await fetch(imageUrl);
+    const response = await fetch(newImage);
     const blob = await response.blob();
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);

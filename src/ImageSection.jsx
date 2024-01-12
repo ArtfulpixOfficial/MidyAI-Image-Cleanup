@@ -13,7 +13,7 @@ export function ImageSection({ image, newImage }) {
         transition="1s ease-in-out"
         style={{
           width: "635px",
-          height: "635px",
+          height: "auto",
         }}
       />
     </section>

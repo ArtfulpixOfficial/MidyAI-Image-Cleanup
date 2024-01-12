@@ -6,20 +6,9 @@ export function ImageToText() {
   const [image, setImage] = useState(null);
   const [newImage, setNewImage] = useState(null);
 
-  const [targetUpscale, setTargetUpscale] = useState(2);
-  const [strategy, setStrategy] = useState("smooth");
-
-  function handleTargetUpscale(value) {
-    setTargetUpscale(value);
-  }
-  function handleStrategy(value) {
-    setStrategy(value);
-  }
   const reset = function () {
     setImage(null);
     setNewImage(null);
-    setTargetUpscale(2);
-    setStrategy("smooth");
   };
   return (
     <>
@@ -29,10 +18,6 @@ export function ImageToText() {
         newImage={newImage}
         setImage={setImage}
         setNewImage={setNewImage}
-        targetUpscale={targetUpscale}
-        handleTargetUpscale={handleTargetUpscale}
-        strategy={strategy}
-        handleStrategy={handleStrategy}
       ></Main>
     </>
   );
