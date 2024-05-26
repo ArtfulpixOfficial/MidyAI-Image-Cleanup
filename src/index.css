@@ -632,3 +632,105 @@ object {
   max-width: 75%;
   /* padding-left: 40px; */
 }
+
+@media (max-width: 700px) {
+  .App {
+    padding: 20px;
+  }
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .normal,
+  .searchNav {
+    padding: 20px;
+  }
+  .searchNav {
+    align-items: center;
+  }
+  main .message h1 {
+    text-align: center;
+  }
+  .logo {
+    font-size: 24px;
+  }
+  .btn {
+    font-size: 14px;
+  }
+  main {
+    padding: 20px;
+  }
+  input {
+    width: 100%;
+  }
+  .imageSection {
+    margin-bottom: 20px;
+  }
+  form {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .upload-box {
+    padding: 60px;
+  }
+  .upscaling-options-bar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+  .strategy-options,
+  .target-dimensions-options {
+    justify-content: flex-start;
+  }
+  .strategy-options *,
+  .target-dimensions-options * {
+    padding: 5px 10px;
+  }
+  .center::before {
+    width: 300px;
+    height: 225px;
+    margin-left: -250px;
+  }
+  .center::after {
+    width: 150px;
+    height: 112.5px;
+  }
+  .card {
+    padding: 0.5rem 1rem;
+  }
+  .card h2 {
+    font-size: 18px;
+    margin-bottom: 0.5rem;
+  }
+  .card p {
+    font-size: 0.8rem;
+    max-width: none;
+  }
+  .description {
+    font-size: 0.7rem;
+  }
+  .description a {
+    padding: 0.5rem;
+  }
+  .description p {
+    padding: 1rem;
+  }
+  .description div {
+    height: 150px;
+  }
+  .absolute {
+    position: relative;
+  }
+  .editor {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 100px;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 1120px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
