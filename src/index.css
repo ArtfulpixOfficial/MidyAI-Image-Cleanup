@@ -638,8 +638,8 @@ object {
     padding: 20px;
   }
   nav {
-    flex-direction: column;
-    align-items: flex-start;
+    /* flex-direction: column; */
+    /* align-items: center; */
     gap: 10px;
   }
   .normal,
