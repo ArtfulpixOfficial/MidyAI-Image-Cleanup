@@ -6,7 +6,7 @@ export function Message() {
         MIDYAI CLEANUP
       </h1>
       <h2 className="text-xl font-semibold text-gray-600 dark:text-gray-400">
-        Remove object, defect, people, or text from your pictures in seconds
+        Erase unwanted elements from images instantly
       </h2>
     </section>
   );
